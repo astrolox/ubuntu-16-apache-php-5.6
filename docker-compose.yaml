@@ -5,6 +5,6 @@ services:
     container_name: apache-php-5.6
     user: "1000000"
     build: .
-    image: ubuntu-16-apache-2.4-php-5.6
+    image: ubuntu-16-apache-php-5.6
     ports:
       - "8080:8080"
