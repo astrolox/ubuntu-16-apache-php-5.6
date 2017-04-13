@@ -29,6 +29,7 @@ git clone https://github.com/1and1internet/${IMAGE}.git
 pushd ${IMAGE}
 
 docker build --pull --rm --tag ${IMAGE} .
+docker pull 1and1internet/ubuntu-16-rspec
 docker run --rm -i -t -v /var/run/docker.sock:/var/run/docker.sock -v ${BASEDIR}/drone-tests/:/drone-tests/ -v ${BASEDIR}/${IMAGE}/:/mnt/ -e IMAGE=${IMAGE} 1and1internet/ubuntu-16-rspec ${RSPEC_CMD_TO_RUN}
 
 popd
