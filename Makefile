@@ -1,12 +1,11 @@
-
-IMAGE_NAME = ubuntu-16-apache-php-5.6
-BASE_IMAGE = 1and1internet/ubuntu-16-apache
+PWD = $(shell pwd)
+IMAGE_NAME = $(shell basename ${PWD})
+BASE_IMAGE = $(shell grep Dockerfile -e FROM | cut -d ' ' -f 2)
 RSPEC_IMAGE = 1and1internet/ubuntu-16-rspec
 TESTS_REPO = https://github.com/1and1internet/drone-tests.git
 DOCKER_SOCKET = /var/run/docker.sock
 BUILD_ARGS = --rm
 RSPEC_ARGS = 
-PWD = $(shell pwd)
 
 all: pull build test
 
