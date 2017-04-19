@@ -15,22 +15,11 @@ WEB_ROOT="/var/www/"
 docker run -u ${UID}:0 -p ${PORT}:8080 -v ${WEB_ROOT}:/var/www/ 1and1internet/ubuntu-16-apache-php-5.6
 ```
 
-## Build and test
+## Building and testing
 
+A simple Makefile is included for your convience. It assumes you have a docker socket avialable at `/var/run/docker.sock`
 
-```bash
-IMAGE="ubuntu-16-apache-php-5.6"
-BASEDIR="$(pwd)"
-RSPEC_CMD_TO_RUN="rspec -f documentation spec/spec_helper.rb"
+To build and test just run `make`.
+You can also just `make pull`, `make build` and `make test` separately.
 
-git clone https://github.com/1and1internet/drone-tests.git
-git clone https://github.com/1and1internet/${IMAGE}.git
-
-pushd ${IMAGE}
-
-docker build --pull --rm --tag ${IMAGE} .
-docker pull 1and1internet/ubuntu-16-rspec
-docker run --rm -i -t -v /var/run/docker.sock:/var/run/docker.sock -v ${BASEDIR}/drone-tests/:/drone-tests/ -v ${BASEDIR}/${IMAGE}/:/mnt/ -e IMAGE=${IMAGE} 1and1internet/ubuntu-16-rspec ${RSPEC_CMD_TO_RUN}
-
-popd
-```
+Please see the top of the Makefile for various variables which you may choose to customise. Variables may be passed as arguments, e.g. `make IMAGE_NAME=bob` or `make build BUILD_ARGS="--rm --no-cache"`
