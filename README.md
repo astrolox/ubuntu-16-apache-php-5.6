@@ -4,7 +4,9 @@ This image provides a common PHP hosting environment. The intent is for the PHP 
 
 ## Updates
 
-Please consult [the official PHP site](http://php.net/supported-versions.php) to understand if this version of PHP is currently being supported. It is recommended that you move to a newer version of PHP once this version passed out of active support.
+Please consult [the official Ubuntu site](https://www.ubuntu.com/info/release-end-of-life) for information on when this version of Ubuntu becomes end of life.
+
+Please consult [the official PHP site](http://php.net/supported-versions.php) to know when this version of PHP becomes end of life. It is recommended that you move to a newer version of PHP once this version passed out of active support.
 
 ***PHP 5.6 stopped receiving active support on 19 Jan 2017.***
 
