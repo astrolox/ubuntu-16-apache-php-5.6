@@ -2,6 +2,12 @@
 
 This image provides a common PHP hosting environment. The intent is for the PHP application itself to be stored in persistent storage wihch is then mounted in to this image at `/var/www`
 
+## Updates
+
+Please consult [the official PHP site](http://php.net/supported-versions.php) to understand if this version of PHP is currently being supported. It is recommended that you move to a newer version of PHP once this version passed out of active support.
+
+***PHP 5.6 stopped receiving active support on 19 Jan 2017.***
+
 ## Usage
 
 Please note this image is explictly intended to be run as a non-privildged user. Ensure you specify a user id (UID) other than zero when you run it. Running as root will not function.
