@@ -11,11 +11,6 @@ if not ENV['IMAGE'] then
   puts "You must provide an IMAGE env variable"
 end
 
-image_path = File.dirname(__FILE__).split("/")[-2].gsub(/^docker-/, "")
-if ENV['IMAGE'] != image_path then
-  puts "\e[31mWARNING: IMAGE variable #{ENV['IMAGE']} does not match spec test path #{image_path}\e[0m"
-end
-
 LISTEN_PORT=8080
 
 set :backend, :docker
