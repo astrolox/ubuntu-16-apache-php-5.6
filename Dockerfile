@@ -1,4 +1,4 @@
-FROM 1and1internet/ubuntu-16-apache
+FROM astrolox/ubuntu-16-apache
 MAINTAINER brian.wojtczak@1and1.co.uk
 ARG DEBIAN_FRONTEND=noninteractive
 COPY files /
